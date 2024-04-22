@@ -20,7 +20,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(name = "member", indexes = {@Index(name = "idx_authId", columnList = "authId")})
+@Table(name = "member", indexes = {
+        @Index(name = "idx_authId", columnList = "authId"),
+        @Index(name = "idx_registration_token", columnList = "registrationToken")
+})
 public class Member {
 
     @Id
@@ -33,5 +36,7 @@ public class Member {
 
     @Enumerated(value = EnumType.STRING)
     private RolesType rolesType;
+
+    private String registrationToken; // 기기 등록 토큰
 
 }

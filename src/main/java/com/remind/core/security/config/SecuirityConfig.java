@@ -103,7 +103,8 @@ public class SecuirityConfig {
      */
     private RequestMatcher[] permitAllRequestMatchers() {
         List<RequestMatcher> requestMatchers = List.of(
-                antMatcher(POST, "/member/login")
+                antMatcher(POST, "/member/login"),
+                antMatcher(POST, "/member/token/device")
         );
         return requestMatchers.toArray(RequestMatcher[]::new);
     }

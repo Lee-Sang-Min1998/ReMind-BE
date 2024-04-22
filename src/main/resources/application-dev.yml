@@ -44,4 +44,8 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
 
+fcm:
+  adminSdk:
+    secret: ${FCM_ADMINSDK_SECRET}
+
 
